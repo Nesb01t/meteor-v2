@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write \"**/*.{js,vue,json}\""
+  },
+  "dependencies": {
+    "@directus/sdk": "^16.1.1",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt": "^3.12.4",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "nuxt-icon": "1.0.0-beta.7",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8"
+  }
+}
