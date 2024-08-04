@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { readItem } from '@directus/sdk'
 import type { Post } from '~/types/from-directus'
+import MarkdownIt from 'markdown-it'
 
 definePageMeta({
   layout: 'base',
@@ -10,6 +11,7 @@ const route = useRoute()
 const id = route.params.id
 
 const post = ref()
+const mdContent = ref()
 const readPost = async (id: string) => {
   const res = await client.request<Post>(readItem('blog_nesb01t', id))
   return res
@@ -17,6 +19,7 @@ const readPost = async (id: string) => {
 
 onMounted(async () => {
   post.value = await readPost(id as string)
+  mdContent.value = new MarkdownIt().render(post.value.content)
 })
 </script>
 
@@ -35,7 +38,7 @@ onMounted(async () => {
 
     <div class="divider" />
 
-    <div v-html="post.content" class="prose"></div>
+    <div v-html="mdContent" class="prose"></div>
   </div>
 </template>
 

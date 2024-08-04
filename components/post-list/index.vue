@@ -9,7 +9,9 @@ const posts = ref()
 
 const readPosts = async () => {
   const res = await client.request<Post>(
-    readItems(dirStaticConfig.blogCollection),
+    readItems(dirStaticConfig.blogCollection, {
+      sort: '-date_updated',
+    }),
   )
   return res
 }
@@ -47,7 +49,7 @@ const filtedPosts = computed(() => {
   @apply p-4;
 
   &__list {
-    @apply gap-5;
+    @apply gap-5 pb-48;
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
   }
 }

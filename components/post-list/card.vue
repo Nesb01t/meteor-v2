@@ -48,7 +48,7 @@ const props = defineProps<{
   }
 
   img {
-    @apply rounded-t-lg max-w-full object-cover;
+    @apply rounded-t-lg max-w-full object-cover border-b border-gray-300 border-opacity-20;
     @apply h-[150px] md:h-[130px];
   }
 }
