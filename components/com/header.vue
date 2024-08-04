@@ -25,7 +25,7 @@
   }
 
   &__nav {
-    @apply flex gap-10 text-sm text-gray-700 hover:text-purple-300;
+    @apply flex gap-10 text-sm text-gray-700 hover:text-gray-300;
 
     a {
       @apply hover:text-purple-800 hover:scale-[105%] transition-all duration-300;

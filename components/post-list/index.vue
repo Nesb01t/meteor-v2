@@ -3,6 +3,7 @@ import { readItems } from '@directus/sdk'
 import type { Post } from '~/types/from-directus'
 import Card from './card.vue'
 import Hero from '../com/hero.vue'
+import TagFilter from './tag-filter.vue'
 
 const posts = ref()
 
@@ -16,16 +17,27 @@ const readPosts = async () => {
 onMounted(async () => {
   posts.value = await readPosts()
 })
+
+// filter
+const tagFilted = ref<string>()
+const filtedPosts = computed(() => {
+  if (!tagFilted.value) return posts.value
+  return posts.value.filter((post: Post) => {
+    if (tagFilted.value) {
+      return post.tag.includes(tagFilted.value)
+    }
+  })
+})
 </script>
 
 <template>
   <div class="post-list">
-    <Hero
-      title="Blog Homepage"
-      description="日常博客、折腾记录和一些工具推荐"
-    />
+    <Hero title="Blog" description="日常博客、折腾记录和一些工具推荐" />
+
+    <TagFilter class="my-6" v-model="tagFilted" />
+
     <ul class="post-list__list">
-      <Card v-for="post in posts" :key="post.id" :post="post" />
+      <Card v-for="post in filtedPosts" :key="post.id" :post="post" />
     </ul>
   </div>
 </template>

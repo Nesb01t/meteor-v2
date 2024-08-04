@@ -48,6 +48,6 @@ const mapTaggedGroupList = (): PortfolioGroup[] => {
 
 <style lang="scss" scoped>
 .portfolio {
-  @apply w-full px-2 flex flex-col gap-16 pb-48;
+  @apply w-full px-2 flex flex-col gap-[240px] pb-48;
 }
 </style>

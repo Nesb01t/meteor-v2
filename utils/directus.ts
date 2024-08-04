@@ -2,6 +2,16 @@ import { createDirectus, rest } from '@directus/sdk'
 
 export const dirStaticConfig = {
   blogCollection: 'blog_nesb01t',
+  blogTags: [
+    'Minecraft',
+    'Frontend',
+    'Linux',
+    'Tool',
+    'Other',
+    'Course',
+    'Unreal',
+    'Backend',
+  ],
   portfolioCollection: 'portfolio_nesb01t',
   apiUrl: 'http://nescraft.cn:8055',
   portfolioTags: ['Web', 'Desktop', 'Game', 'Other'],

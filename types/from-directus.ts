@@ -13,9 +13,11 @@ export interface Post {
 export interface Portfolio {
   id: string
   name: string
+  url: string
   description: string
   updated: string
   tag: string
+  tech_stack: string[]
 
   cover?: string
 }
