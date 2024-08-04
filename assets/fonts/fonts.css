@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'PlaywriteAR';
+  src: url('~/assets/fonts/PlaywriteAR-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('~/assets/fonts/Comfortaa-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Marcellus';
+  src: url('~/assets/fonts/Marcellus-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'NotoSerifSC';
+  src: url('~/assets/fonts/NotoSerifSC-Light.ttf');
+}
+
+* {
+  font-family: 'Comfortaa', 'NotoSerifSC', 'Courier New', Courier, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Marcellus', 'NotoSerifSC', 'Courier New', Courier, monospace;
+}

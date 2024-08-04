@@ -1,17 +1,14 @@
 import { createDirectus, rest } from '@directus/sdk'
 
-interface Blog {
-  id: number
-  title: string
-  content: string
+export const dirStaticConfig = {
+  blogCollection: 'blog_nesb01t',
+  portfolioCollection: 'portfolio_nesb01t',
+  apiUrl: 'http://nescraft.cn:8055',
+  portfolioTags: ['Web'],
 }
-
-interface ApiCollections {
-  blog: Blog
-}
-
-export const client = createDirectus('http://nescraft.cn:8055').with(rest())
 
 export const dirAssetsSrc = (src: string) => {
-  return `http://nescraft.cn:8055/assets/${src}`
+  return `${dirStaticConfig.apiUrl}/assets/${src}`
 }
+
+export const client = createDirectus(dirStaticConfig.apiUrl).with(rest())
