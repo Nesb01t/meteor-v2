@@ -17,7 +17,7 @@ const props = defineProps<{
 
     <div class="content">
       <h1 class="name">{{ portfolio.name }}</h1>
-      <p class="description">{{ portfolio.description }}</p>
+      <p class="description" v-html="portfolio.description" />
     </div>
   </div>
 </template>
@@ -41,11 +41,11 @@ const props = defineProps<{
 
   .content {
     @apply hover:opacity-0 transition-all duration-500;
-    @apply text-white px-6 pb-2;
     @apply h-full flex flex-col gap-2 justify-center;
+    @apply text-white px-6 pb-2 drop-shadow-md drop-shadow-sm;
 
     .name {
-      @apply text-2xl font-bold self-center;
+      @apply text-xl font-bold self-center;
     }
 
     .description {

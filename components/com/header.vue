@@ -25,12 +25,16 @@
   }
 
   &__nav {
-    @apply flex gap-8 text-sm text-gray-700;
+    @apply flex gap-10 text-sm text-gray-700 hover:text-purple-300;
+
+    a {
+      @apply hover:text-purple-800 hover:scale-[105%] transition-all duration-300;
+    }
   }
 }
 
 .logo {
-  @apply text-purple-700 opacity-80;
+  @apply text-purple-700 opacity-80 hover:text-purple-500 transition-all duration-300;
   font-family: 'PlaywriteAR', 'Courier New', Courier, monospace;
   font-weight: bold;
 }

@@ -36,13 +36,18 @@ const mapTaggedGroupList = (): PortfolioGroup[] => {
 <template>
   <div class="portfolio">
     <template v-for="m in taggedGroupList" :key="m">
-      <TaggedGroup :tag="m.tag" :items="m.items" :idx="m.index" />
+      <TaggedGroup
+        class="w-full"
+        :tag="m.tag"
+        :items="m.items"
+        :idx="m.index"
+      />
     </template>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .portfolio {
-  @apply w-full px-6 flex flex-col;
+  @apply w-full px-2 flex flex-col gap-16 pb-48;
 }
 </style>

@@ -15,6 +15,10 @@ const props = defineProps<{
       {{ props.tag }}
       <h2>/{{ idx }}</h2>
     </h1>
+
+    <div v-if="!items.length" class="portfolio-group__empty">
+      <p>待补充</p>
+    </div>
     <div class="portfolio-group__list">
       <template v-for="item in items" :key="item.id">
         <Card class="portfolio-card" :portfolio="item" v-if="item" />
@@ -28,7 +32,7 @@ const props = defineProps<{
   @apply self-center;
 
   &__title {
-    @apply text-3xl  mb-4 flex gap-2;
+    @apply text-3xl mb-4 flex gap-2;
 
     h2 {
       @apply text-xl text-gray-500 self-end;
@@ -36,10 +40,10 @@ const props = defineProps<{
   }
 
   &__list {
-    @apply flex;
+    @apply grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 
     .portfolio-card {
-      @apply w-[340px] h-[170px];
+      @apply h-[200px];
     }
   }
 }
