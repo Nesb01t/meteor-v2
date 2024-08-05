@@ -6,6 +6,10 @@ const props = defineProps<{
   portfolio: Portfolio
   reverse?: boolean
 }>()
+
+const openUrl = (url: string) => {
+  if (url) window.open(url, '_blank')
+}
 </script>
 
 <template>
@@ -23,7 +27,15 @@ const props = defineProps<{
     </div>
 
     <div class="content">
-      <h1 class="name">{{ portfolio.name }}</h1>
+      <h1 class="name flex items-center gap-1">
+        {{ portfolio.name
+        }}<Icon
+          v-if="portfolio.url"
+          @click="() => openUrl(portfolio.url)"
+          name="mdi:link-variant"
+          class="text-gray-500 text-lg hover:text-purple-500 transition-all duration-150 hover:scale-[111%] cursor-pointer"
+        ></Icon>
+      </h1>
       <p class="description" v-html="portfolio.description" />
       <ul class="flex flex-wrap gap-[10px]">
         <TechTag v-for="i in portfolio.tech_stack" :tech="i" />
