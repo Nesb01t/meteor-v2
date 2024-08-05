@@ -13,7 +13,7 @@ export const dirStaticConfig = {
     'Backend',
   ],
   portfolioCollection: 'portfolio_nesb01t',
-  apiUrl: 'https://nescraft.cn:8055',
+  apiUrl: 'https://api.nescraft.cn',
   portfolioTags: ['Web', 'Desktop', 'Game', 'Other'],
 }
 
