@@ -62,14 +62,15 @@ const openUrl = (url: string) => {
   .content {
     @apply col-span-3 md:col-span-2;
     @apply w-full h-full flex flex-col gap-4 justify-center items-start;
-    @apply text-black drop-shadow-md drop-shadow-sm;
+    @apply drop-shadow-md drop-shadow-sm;
 
     .name {
       @apply text-2xl font-semibold;
     }
 
     .description {
-      @apply text-base text-wrap text-left;
+      @apply text-sm text-wrap text-left;
+      @apply text-gray-600 dark:text-gray-500;
     }
   }
 }

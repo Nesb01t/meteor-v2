@@ -45,7 +45,8 @@ definePageMeta({
   }
 
   .image-lore {
-    @apply text-gray-600 text-xs flex justify-end max-w-[800px] w-full pr-1;
+    @apply text-xs flex justify-end max-w-[800px] w-full pr-1;
+    @apply text-gray-400 dark:text-gray-500;
   }
 
   .sub-title {
@@ -59,6 +60,7 @@ definePageMeta({
 }
 
 .lore {
-  @apply text-gray-900 text-base flex flex-col;
+  @apply text-base flex flex-col;
+  @apply text-gray-900 dark:text-gray-300;
 }
 </style>

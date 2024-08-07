@@ -12,7 +12,7 @@ const props = defineProps<{
 <template>
   <div class="portfolio-group">
     <div class="portfolio-group__title">
-      <h1>· {{ props.tag }}</h1>
+      <h1>{{ props.tag }}</h1>
       <h2>/{{ idx }}</h2>
     </div>
 
@@ -40,7 +40,8 @@ const props = defineProps<{
     @apply text-4xl mb-4 flex gap-2;
 
     h2 {
-      @apply text-2xl text-gray-500 self-end;
+      @apply text-2xl self-end;
+      @apply text-gray-300 dark:text-gray-600;
     }
   }
 

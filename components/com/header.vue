@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ColorMode from './color-mode.vue'
+</script>
 
 <template>
   <div class="header">
@@ -9,6 +11,7 @@
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/portfolio/">Portfolio</NuxtLink>
       <NuxtLink to="/about/">About</NuxtLink>
+      <ColorMode></ColorMode>
     </div>
   </div>
 </template>
@@ -21,11 +24,12 @@
   @apply pt-8 px-6 pb-8;
 
   &__logo {
-    @apply text-xl;
+    @apply text-xl flex items-center gap-2;
   }
 
   &__nav {
-    @apply flex gap-10 text-sm text-gray-700 hover:text-gray-300;
+    @apply flex gap-10 text-sm;
+    @apply text-gray-700 hover:text-gray-300 dark:text-gray-300 dark:hover:text-gray-700;
 
     a {
       @apply hover:text-purple-800 hover:scale-[105%] transition-all duration-300;

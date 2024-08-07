@@ -34,7 +34,8 @@ const avaliableTags = dirStaticConfig.blogTags
 
 .tech-tag {
   @apply text-xs cursor-pointer transition-all duration-300;
-  @apply inline-block bg-purple-50 bg-opacity-50 shadow-md text-gray-600 px-[10px] py-[3px] rounded-full;
+  @apply inline-block shadow-md px-[10px] py-[3px] rounded-full;
+  @apply bg-purple-50 bg-opacity-50 text-gray-600 dark:bg-opacity-10 dark:text-gray-300;
   @apply flex items-center gap-[5px] font-extralight;
 }
 
@@ -44,7 +45,7 @@ const avaliableTags = dirStaticConfig.blogTags
 
 .divider {
   @apply w-[1px] h-[16px];
-  @apply border-r border-gray-300;
+  @apply border-r border-gray-300 dark:border-white/20;
   @apply self-center;
 }
 </style>
