@@ -22,7 +22,7 @@ const toggleColorMode = () => {
 
 <style lang="scss" scoped>
 .color-mode-icon {
-  @apply cursor-pointer hover:scale-[115%] text-lg  duration-300 transition-all;
+  @apply cursor-pointer hover:scale-[115%] text-lg duration-300 transition-all;
   @apply hover:text-purple-500 text-gray-700 dark:text-gray-300;
 }
 </style>

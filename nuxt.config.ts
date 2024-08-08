@@ -10,4 +10,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
   css: ['@/assets/fonts/fonts.css'],
+  colorMode: {
+    classSuffix: '',
+  },
 })

@@ -29,10 +29,10 @@ import ColorMode from './color-mode.vue'
 
   &__nav {
     @apply flex gap-10 text-sm;
-    @apply text-gray-700 hover:text-gray-300 dark:text-gray-300 dark:hover:text-gray-700;
+    @apply text-gray-700 hover:text-gray-300 dark:text-gray-300 dark:hover:text-gray-600;
 
     a {
-      @apply hover:text-purple-800 hover:scale-[105%] transition-all duration-300;
+      @apply hover:text-purple-700 hover:scale-[105%] transition-all duration-300;
     }
   }
 }
