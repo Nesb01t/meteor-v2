@@ -31,14 +31,16 @@ onMounted(async () => {
       <p class="date">
         创建于 {{ formatDate(post.date_created) }}
 
-        <span v-if="post.date_updated" class="text-gray-300 mx-4">|</span>
+        <span
+          v-if="post.date_updated"
+          class="text-gray-300 dark:text-gray-700 mx-4"
+          >|</span
+        >
         {{ post.date_updated && `上次更新 ${formatDate(post.date_updated)}` }}
       </p>
     </header>
 
-    <div class="divider" />
-
-    <div v-html="mdContent" class="prose"></div>
+    <div v-html="mdContent" class="mt-16 prose dark:prose-invert"></div>
   </div>
 </template>
 
@@ -56,7 +58,7 @@ onMounted(async () => {
     }
 
     h2 {
-      @apply text-lg self-center text-gray-800;
+      @apply text-lg self-center text-gray-800 dark:text-purple-100;
     }
 
     .date {
