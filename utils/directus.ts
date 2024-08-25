@@ -18,7 +18,7 @@ export const dirStaticConfig = {
 }
 
 export const dirAssetsSrc = (src: string) => {
-  return `${dirStaticConfig.apiUrl}/assets/${src}`
+  return `${dirStaticConfig.apiUrl}/assets/${src}?key=fastload-quality-75`
 }
 
 export const client = createDirectus(dirStaticConfig.apiUrl).with(rest())

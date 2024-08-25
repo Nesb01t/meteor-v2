@@ -8,7 +8,12 @@ const props = defineProps<{
 
 <template>
   <NuxtLink v-if="post" class="post-card" :href="`/posts/${post.id}`">
-    <img v-if="post.cover" :src="dirAssetsSrc(post.cover)" alt="post image" />
+    <NuxtImg
+      v-if="post.cover"
+      :src="dirAssetsSrc(post.cover)"
+      alt="post image"
+      loading="lazy"
+    />
     <div class="post-card__tag" :style="{ background: getTagColor(post.tag) }">
       <span v-for="t in post.tag">{{ t }}</span>
     </div>
@@ -26,7 +31,7 @@ const props = defineProps<{
   @apply border-gray-200 dark:border-none;
   @apply flex flex-col relative;
 
-  @apply hover:shadow-lg hover:scale-[101%] transition-shadow transition-transform duration-300;
+  @apply hover:shadow-lg hover:scale-[101%] transition-all duration-300;
   @apply cursor-pointer;
 
   &__tag {

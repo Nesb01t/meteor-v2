@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxtjs/color-mode',
+    '@nuxt/image',
   ],
   css: ['@/assets/fonts/fonts.css'],
   colorMode: {
