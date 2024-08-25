@@ -51,18 +51,21 @@ const openUrl = (url: string) => {
   @apply max-md:flex max-md:flex-col;
 
   &:hover {
-    @apply gap-12;
+    @media (min-width: 768px) {
+      @apply gap-12;
 
-    .cover {
-      transform: scale(1.15) rotateX(15deg) rotateY(18deg);
-      box-shadow: 0 0 80px rgba(190, 69, 246, 0.29);
-      @apply rounded-xl border-purple-500 dark:border-purple-100 border-2;
-    }
+      .cover {
+        transform: scale(1.15) rotateX(15deg) rotateY(18deg);
+        box-shadow: 0 0 80px rgba(190, 69, 246, 0.29);
+        @apply rounded-xl border-purple-500 dark:border-purple-100 border-2;
+      }
 
-    .link-icon {
-      @apply scale-[1.15];
+      .link-icon {
+        @apply scale-[1.15];
+      }
     }
   }
+
   .cover {
     @apply col-span-1;
     @apply min-w-[33%] brightness-[90%] transition-all duration-300;
