@@ -34,7 +34,15 @@ const filtedPosts = computed(() => {
 
 <template>
   <div class="post-list">
-    <Hero title="Blog" description="日常博客、折腾记录和一些工具推荐" />
+    <Hero
+      title="Blog"
+      :description="`日常博客、折腾记录和一些工具推荐，仅用于个人学习分享，不会发布到公开论坛等`"
+    />
+
+    <span v-if="posts?.[0]" class="opacity-80 text-xs"
+      >共 {{ posts.length }} 份笔记，上一次更新于
+      {{ formatDate(posts[0]?.date_updated) }}</span
+    >
 
     <TagFilter class="my-6" v-model="tagFilted" />
 
