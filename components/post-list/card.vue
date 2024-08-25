@@ -11,6 +11,7 @@ const props = defineProps<{
     <NuxtImg
       v-if="post.cover"
       :src="dirAssetsSrc(post.cover)"
+      class="post-card__cover"
       alt="post image"
       loading="lazy"
     />
@@ -34,11 +35,25 @@ const props = defineProps<{
   @apply hover:shadow-lg hover:scale-[101%] transition-all duration-300;
   @apply cursor-pointer;
 
+  &:hover {
+    .post-card__tag {
+      @apply rounded-md top-3 shadow-lg;
+    }
+
+    .post-card__desc {
+      @apply text-purple-900 dark:text-purple-300;
+    }
+  }
+  &__cover {
+    @apply brightness-95 dark:brightness-[70%];
+  }
+
   &__tag {
-    @apply absolute right-4;
+    @apply absolute right-4 top-0;
     @apply px-[10px] py-[4px] bg-blue-500 text-white;
     @apply rounded-b-md;
     @apply text-xs;
+    @apply transition-all duration-150;
   }
 
   &__desc {

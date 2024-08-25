@@ -46,10 +46,10 @@ const props = defineProps<{
   }
 
   &__list {
-    @apply flex flex-col gap-24;
+    @apply flex flex-col md:gap-24 gap-12;
 
     .portfolio-card {
-      @apply h-[230px];
+      @apply transition-all h-[210px] max-md:h-[340px];
     }
   }
 }

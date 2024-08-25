@@ -40,7 +40,7 @@ const avaliableTags = dirStaticConfig.blogTags
 }
 
 .selected {
-  @apply bg-purple-400 text-white;
+  @apply bg-purple-400 dark:bg-purple-500 text-white;
 }
 
 .divider {
