@@ -3,7 +3,9 @@
 <template>
   <div class="layout-base">
     <ComHeader />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <ComFooter />
   </div>
 </template>
