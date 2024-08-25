@@ -13,4 +13,8 @@ useHead({
   </NuxtLayout>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+body {
+  overflow-y: scroll;
+}
+</style>
