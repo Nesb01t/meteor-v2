@@ -42,11 +42,12 @@ const props = defineProps<{
   }
 
   &__desc {
-    @apply pt-3 pb-4 px-5 flex flex-col gap-2 rounded-b-lg;
+    @apply pt-3 pb-4 px-5 flex flex-col flex-1 gap-2 rounded-b-lg;
     @apply bg-white dark:bg-black/50;
 
     h2 {
       @apply text-lg font-bold;
+      @apply line-clamp-1;
     }
 
     h3 {
