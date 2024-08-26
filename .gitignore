@@ -1,3 +1,6 @@
+# mannually setting
+pnpm-lock.yaml
+
 # Nuxt dev/build outputs
 .output
 .data

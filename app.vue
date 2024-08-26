@@ -7,7 +7,7 @@ useHead({
   link: [
     {
       rel: 'stylesheet',
-      href: 'https://fonts.font.im/css?family=Comfortaa|Marcellus|Playfair+Display:400i',
+      href: 'https://fonts.font.im/css?family=Amaranth:400i|Comfortaa|Marcellus',
     },
   ],
 })

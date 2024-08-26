@@ -40,7 +40,7 @@ import ColorMode from './color-mode.vue'
 
 .logo {
   @apply text-purple-700 opacity-80 hover:text-purple-500 transition-all duration-300;
-  font-family: 'Playfair Display', 'Courier New', Courier, monospace;
+  font-family: 'Amaranth', 'Courier New', Courier, monospace;
   font-weight: bold;
 }
 </style>
