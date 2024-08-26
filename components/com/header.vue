@@ -25,7 +25,6 @@ import ColorMode from './color-mode.vue'
 
   &__logo {
     @apply text-2xl flex items-center gap-2;
-    letter-spacing: 1px;
   }
 
   &__nav {
@@ -41,6 +40,7 @@ import ColorMode from './color-mode.vue'
 .logo {
   @apply text-purple-700 opacity-80 hover:text-purple-500 transition-all duration-300;
   font-family: 'Amaranth', 'Courier New', Courier, monospace;
-  font-weight: bold;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 </style>
