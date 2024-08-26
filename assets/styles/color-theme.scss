@@ -4,6 +4,6 @@ body {
 }
 
 .dark body {
-  @apply bg-black/95;
+  @apply bg-black/95 duration-300;
   color: white;
 }

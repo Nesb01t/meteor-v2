@@ -7,6 +7,7 @@ import TagFilter from './tag-filter.vue'
 
 const posts = ref()
 
+const fetchingPosts = ref(true)
 const readPosts = async () => {
   const res = await client.request<Post>(
     readItems(dirStaticConfig.blogCollection, {
@@ -18,6 +19,7 @@ const readPosts = async () => {
 
 onMounted(async () => {
   posts.value = await readPosts()
+  fetchingPosts.value = false
 })
 
 // filter
@@ -39,16 +41,24 @@ const filtedPosts = computed(() => {
       :description="`日常博客、折腾记录和一些工具推荐，仅用于个人学习分享，不会发布到公开论坛等`"
     />
 
-    <span v-if="posts?.[0]" class="opacity-80 text-xs"
+    <div
+      v-if="fetchingPosts"
+      class="opacity-80 text-sm flex gap-2 items-center"
+    >
+      <Icon name="eos-icons:loading" /><span>Loading...</span>
+    </div>
+    <span v-else-if="posts?.[0]" class="opacity-80 text-xs"
       >共 {{ posts.length }} 份笔记，上一次更新于
       {{ formatDate(posts[0]?.date_updated) }}</span
     >
 
     <TagFilter class="my-6" v-model="tagFilted" />
 
-    <ul class="post-list__list">
-      <Card v-for="post in filtedPosts" :key="post.id" :post="post" />
-    </ul>
+    <transition name="fade-in" mode="out-in">
+      <ul v-if="!fetchingPosts" class="post-list__list">
+        <Card v-for="post in filtedPosts" :key="post.id" :post="post" />
+      </ul>
+    </transition>
   </div>
 </template>
 
@@ -60,5 +70,18 @@ const filtedPosts = computed(() => {
     @apply gap-5 pb-48;
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
   }
+}
+
+.fade-in-enter-active,
+.fade-in-leave-active {
+  @apply transition-all duration-500;
+  opacity: 1;
+}
+
+.fade-in-enter-from,
+.fade-in-leave-to {
+  @apply transition-all duration-500;
+  opacity: 0;
+  transform: translateY(70px);
 }
 </style>
