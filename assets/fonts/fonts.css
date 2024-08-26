@@ -1,18 +1,3 @@
-@font-face {
-  font-family: 'PlaywriteAR';
-  src: url('~/assets/fonts/PlaywriteAR-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Comfortaa';
-  src: url('~/assets/fonts/Comfortaa-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Marcellus';
-  src: url('~/assets/fonts/Marcellus-Regular.ttf');
-}
-
 * {
   font-family: 'Comfortaa', 'Courier New', Courier, monospace;
 }
@@ -23,5 +8,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Marcellus', 'Courier New', Courier, monospace;
+  font-family: 'Marcellus', 'Noto Sans SC', 'Courier New', Courier, monospace;
 }

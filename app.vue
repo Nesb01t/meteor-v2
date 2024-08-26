@@ -4,6 +4,12 @@ import '~/assets/styles/color-theme.scss'
 useHead({
   title: "Nesb01t's Blog",
   meta: [{ name: 'description', content: 'Page description' }],
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.font.im/css?family=Comfortaa|Marcellus|Playfair+Display:400i',
+    },
+  ],
 })
 </script>
 
