@@ -40,7 +40,7 @@ onMounted(async () => {
       </p>
     </header>
 
-    <div v-html="mdContent" class="mt-16 prose dark:prose-invert"></div>
+    <div v-html="mdContent" class="mx-auto mt-16 prose dark:prose-invert"></div>
   </div>
 </template>
 
