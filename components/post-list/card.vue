@@ -45,7 +45,7 @@ const imgLoading = ref(true)
 
   &:hover {
     .post-card__tag {
-      @apply rounded-md top-3 shadow-lg;
+      @apply rounded-md top-1 shadow-lg;
     }
 
     .post-card__desc {
@@ -54,7 +54,7 @@ const imgLoading = ref(true)
   }
 
   &__cover {
-    @apply relative flex justify-center items-center;
+    @apply relative flex justify-center items-center overflow-hidden;
     @apply brightness-95 rounded-t-lg dark:brightness-[70%] border-b border-opacity-20;
     @apply border-gray-300 dark:border-white/5;
     @apply h-[150px] md:h-[130px] bg-gradient-to-tr from-blue-100 to-purple-200 dark:from-gray-800 dark:to-gray-900;
