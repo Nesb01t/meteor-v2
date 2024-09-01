@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import '~/assets/styles/color-theme.scss'
 
+const online = ref(false)
 useHead({
-  title: "Nesb01t's Blog",
+  title: online ? "Nesb01t's Blog" : '聪明nes的心理帮助小窝',
   meta: [{ name: 'description', content: 'Page description' }],
   link: [
     {

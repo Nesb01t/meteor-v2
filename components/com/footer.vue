@@ -9,7 +9,7 @@
       <NuxtLink to="https://nuxt.com/">Powered by Nuxt.js</NuxtLink>
     </div>
     <div class="footer__nav">
-      <div>浙ICP备2024103738号-1</div>
+      <NuxtLink to="https://beian.miit.gov.cn/">浙ICP备2024103738号-1</NuxtLink>
       <div class="flex gap-8">
         <NuxtLink to="https://github.com/nesb01t">我的 GitHub</NuxtLink>
         <NuxtLink to="https://juejin.cn/user/1128536414880599"

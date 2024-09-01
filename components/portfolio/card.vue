@@ -36,6 +36,8 @@ const openUrl = (url: string) => {
           class="link-icon text-gray-500 text-lg hover:text-purple-500 transition-all duration-150 hover:scale-[111%] cursor-pointer"
         ></Icon>
       </h1>
+
+      <p class="status">{{ portfolio.status }}</p>
       <p class="description" v-html="portfolio.description" />
       <ul class="flex flex-wrap gap-[10px]">
         <TechTag v-for="i in portfolio.tech_stack" :tech="i" />
@@ -74,6 +76,10 @@ const openUrl = (url: string) => {
     img {
       @apply h-full w-full max-md:h-[380px] object-cover;
     }
+  }
+
+  .status {
+    @apply dark:text-purple-300 text-purple-600 opacity-50 text-xs mt-[-14px];
   }
 
   .content {

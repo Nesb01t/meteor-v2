@@ -7,7 +7,9 @@ import TaggedGroup from './tagged-group.vue'
 const portfolio = ref()
 const readPortfolio = async () => {
   const res = await client.request<Portfolio>(
-    readItems(dirStaticConfig.portfolioCollection),
+    readItems(dirStaticConfig.portfolioCollection, {
+      sort: '-updated',
+    }),
   )
   return res
 }
