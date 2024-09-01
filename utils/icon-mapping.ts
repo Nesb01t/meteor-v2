@@ -55,6 +55,8 @@ const techIcons = {
   course: 'mdi:cloud-braces',
   unreal: 'logos:unrealengine-icon',
   backend: 'mdi:server',
+  game: 'mdi:gamepad-variant',
+  livelong: 'mdi:heart-pulse',
 }
 
 const techIconFillColor = {
@@ -63,6 +65,8 @@ const techIconFillColor = {
   other: '#bb0000',
   course: '#00aaaa',
   backend: '#bb3300',
+  game: '#009900',
+  livelong: '#ff0000',
 }
 
 const postTagColor = {
@@ -74,6 +78,8 @@ const postTagColor = {
   course: '#00aaaa',
   unreal: '#009900',
   backend: '#bb3300',
+  game: '#009900',
+  livelong: '#ff0000',
 }
 
 export const getIconName = (tech?: string) => {

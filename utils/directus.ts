@@ -11,6 +11,8 @@ export const dirStaticConfig = {
     'Course',
     'Unreal',
     'Backend',
+    'Game',
+    'Livelong',
   ],
   portfolioCollection: 'portfolio_nesb01t',
   apiUrl: 'https://api.nescraft.cn',
