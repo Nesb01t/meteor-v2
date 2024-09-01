@@ -12,7 +12,7 @@ export const dirStaticConfig = {
     'Unreal',
     'Backend',
     'Game',
-    'Livelong',
+    'Lifelong',
   ],
   portfolioCollection: 'portfolio_nesb01t',
   apiUrl: 'https://api.nescraft.cn',

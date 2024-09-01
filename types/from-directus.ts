@@ -18,6 +18,7 @@ export interface Portfolio {
   updated: string
   tag: string
   tech_stack: string[]
+  status: string
 
   cover?: string
 }
