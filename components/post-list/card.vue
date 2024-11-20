@@ -28,7 +28,12 @@ const imgLoading = ref(true)
     </div>
     <div class="post-card__desc">
       <h2>{{ post.title }}</h2>
-      <h3>{{ post.sub_title }}</h3>
+      <h3 class="items-center">
+        <span class="mr-1">{{ post.sub_title }}</span>
+        <bold class="opacity-60 ml-auto text-[11px]">{{
+          formatRelativeTime(post.date_updated)
+        }}</bold>
+      </h3>
     </div>
   </NuxtLink>
 </template>
