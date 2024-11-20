@@ -277,7 +277,7 @@
 
 <style lang="scss" scoped>
 .resume {
-  @apply pt-8 w-full max-w-[968px] mx-auto px-[36px];
+  @apply pt-4 w-full max-w-[968px] mx-auto;
 
   .name {
     @apply text-2xl pb-1 pl-1 mb-2;
