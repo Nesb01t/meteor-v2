@@ -19,4 +19,13 @@ export default defineNuxtConfig({
       mode: 'out-in',
     },
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
+  },
 })

@@ -14,7 +14,7 @@ definePageMeta({
 
 <style lang="scss" scoped>
 .portfolio-page {
-  @apply p-4 flex flex-col max-w-[1000px] w-full mx-auto;
+  @apply p-4 flex flex-col max-w-[1200px] w-full mx-auto;
 }
 .hero {
   @apply w-full mx-auto px-4;

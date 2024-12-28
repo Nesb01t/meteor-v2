@@ -47,7 +47,7 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .single-post-page {
   @apply p-4 pb-48;
-  @apply max-w-[1000px] mx-auto;
+  @apply max-w-[1200px] mx-auto;
 
   header {
     @apply pb-5 pt-8;

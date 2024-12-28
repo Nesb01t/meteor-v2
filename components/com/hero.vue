@@ -8,7 +8,9 @@ const props = defineProps<{
 <template>
   <div class="hero">
     <h1>{{ title }}</h1>
-    <h2 class="mt-4">{{ description }}</h2>
+    <h2 class="mt-4">
+      <span class="text-sm opacity-55" v-html="description"></span>
+    </h2>
     <!-- <div class="divider"/> -->
   </div>
 </template>

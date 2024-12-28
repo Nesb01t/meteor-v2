@@ -57,6 +57,9 @@ const techIcons = {
   backend: 'mdi:server',
   game: 'mdi:gamepad-variant',
   lifelong: 'mdi:heart-pulse',
+  unity: 'logos:unity',
+  digitalart: 'mdi:palette',
+  graphic: 'mdi:graph',
 }
 
 const techIconFillColor = {
@@ -67,6 +70,9 @@ const techIconFillColor = {
   backend: '#bb3300',
   game: '#009900',
   lifelong: '#ff0000',
+  unity: '#009900',
+  digitalart: '#009900',
+  graphic: '#009900',
 }
 
 const postTagColor = {
@@ -80,6 +86,9 @@ const postTagColor = {
   backend: '#bb3300',
   game: '#009900',
   lifelong: '#775599',
+  unity: '#009900',
+  digitalart: '#009900',
+  graphic: '#009900',
 }
 
 export const getIconName = (tech?: string) => {

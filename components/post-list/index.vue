@@ -38,7 +38,7 @@ const filtedPosts = computed(() => {
   <div class="post-list">
     <Hero
       title="Blog"
-      :description="`日常博客、折腾记录和一些工具推荐，仅用于个人学习分享，不会发布到公开论坛等`"
+      :description="`Daily blogs, experimentation records, and some tool recommendations, intended solely for personal learning and sharing.<br> They will not be published on public forums or similar platforms.`"
     />
 
     <div
@@ -47,8 +47,8 @@ const filtedPosts = computed(() => {
     >
       <Icon name="eos-icons:loading" /><span>Loading...</span>
     </div>
-    <span v-else-if="posts?.[0]" class="opacity-80 text-xs"
-      >共 {{ posts.length }} 份笔记，上一次更新于
+    <span v-else-if="posts?.[0]" class="opacity-80 text-xs">
+      {{ posts.length }} Posts totally, The last updated on
       {{ formatDate(posts[0]?.date_updated) }}</span
     >
 

@@ -6,13 +6,13 @@ const avaliableTags = dirStaticConfig.blogTags
 <template>
   <ul class="tag-filter">
     <div class="tech-tag" :class="!tag ? 'selected' : ''" @click="tag = ''">
-      选择全部
+      Select All
     </div>
 
     <div class="divider" />
     <div
       v-for="t in avaliableTags"
-      class="tech-tag"
+      class="tech-tag flex items-center"
       :class="tag === t ? 'selected' : ''"
       @click="tag = tag === t ? '' : t"
     >
@@ -23,6 +23,8 @@ const avaliableTags = dirStaticConfig.blogTags
         :style="{ color: getIconFillColor(t) }"
       />
       {{ t }}
+
+      <div class="opacity-65 text-[10px] h-[14px]">12</div>
     </div>
   </ul>
 </template>

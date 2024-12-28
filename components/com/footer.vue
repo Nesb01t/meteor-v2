@@ -23,7 +23,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  @apply mt-auto mx-auto max-w-[1000px] w-[100%];
+  @apply mt-auto mx-auto max-w-[1200px] w-[100%];
 
   @apply flex justify-between items-center;
   @apply p-4 pb-8;
