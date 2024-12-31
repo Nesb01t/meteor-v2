@@ -12,16 +12,17 @@
     "sync": "/home/nes/apps/sync.sh"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@tailwindcss/typography": "^0.5.13",
-    "markdown-it": "^14.1.0",
-    "dayjs": "^1.11.12",
-    "nuxt": "^3.12.4",
-    "vue": "latest",
+    "@directus/sdk": "^16.1.1",
     "@nuxt/icon": "^1.4.5",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.2",
-    "@directus/sdk": "^16.1.1"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@tailwindcss/typography": "^0.5.13",
+    "@vueuse/core": "^12.2.0",
+    "dayjs": "^1.11.12",
+    "markdown-it": "^14.1.0",
+    "nuxt": "^3.12.4",
+    "vue": "latest"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",

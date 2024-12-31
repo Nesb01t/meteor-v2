@@ -17,27 +17,24 @@ const avaliableTags = dirStaticConfig.blogTags
       @click="tag = tag === t ? '' : t"
     >
       <Icon
-        v-if="t && tag !== t"
         :name="getIconName(t)"
-        class="drop-shadow-sm"
+        class="drop-shadow-sm text-sm"
         :style="{ color: getIconFillColor(t) }"
       />
       {{ t }}
-
-      <div class="opacity-65 text-[10px] h-[14px]">12</div>
     </div>
   </ul>
 </template>
 
 <style lang="scss" scoped>
 .tag-filter {
-  @apply flex flex-wrap gap-4;
+  @apply flex flex-wrap gap-[10px];
 }
 
 .tech-tag {
   @apply text-xs cursor-pointer transition-all duration-300;
-  @apply inline-block shadow-md px-[10px] py-[3px] rounded-full;
-  @apply bg-purple-50 bg-opacity-50 text-gray-600 dark:bg-opacity-10 dark:text-gray-300;
+  @apply inline-block border border-neutral-500/20 px-[10px] py-[3px] rounded-xl;
+  @apply bg-purple-50/30 text-gray-600 dark:text-gray-100 dark:bg-gray-200/25;
   @apply flex items-center gap-[5px] font-extralight;
 }
 

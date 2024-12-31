@@ -2,14 +2,24 @@
 import type { Post } from '~/types/from-directus'
 
 const props = defineProps<{
-  post?: Post
+  post: Post
 }>()
 
+const loading = ref(true)
 const imgLoading = ref(true)
+
+onMounted(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 12))
+  loading.value = false
+})
 </script>
 
 <template>
-  <NuxtLink v-if="post" class="post-card" :href="`/posts/${post.id}`">
+  <NuxtLink
+    v-if="post && !loading"
+    class="post-card"
+    :href="`/posts/${post.id}`"
+  >
     <div class="post-card__cover">
       <NuxtImg
         v-if="post.cover"
@@ -23,6 +33,7 @@ const imgLoading = ref(true)
         <Icon name="eos-icons:loading" />Loading...
       </div>
     </div>
+
     <div class="post-card__tag" :style="{ background: getTagColor(post.tag) }">
       <span v-for="t in post.tag">{{ t }}</span>
     </div>
@@ -94,5 +105,18 @@ const imgLoading = ref(true)
 
 .outrect-loading {
   @apply absolute z-[-100] opacity-0;
+}
+
+.fade-in-enter-active,
+.fade-in-leave-active {
+  @apply transition-all duration-500;
+  opacity: 1;
+}
+
+.fade-in-enter-from,
+.fade-in-leave-to {
+  @apply transition-all duration-500;
+  opacity: 0;
+  transform: translateY(70px);
 }
 </style>
