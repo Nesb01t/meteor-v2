@@ -5,14 +5,16 @@ import Card from './card.vue'
 import Hero from '../com/hero.vue'
 import TagFilter from './tag-filter.vue'
 import { useIntersectionObserver } from '@vueuse/core'
+import { ref, onMounted } from 'vue'
+import { client, dirStaticConfig } from '../../utils/directus'
 
 const PAGE_LIMIT = 12
 
-const posts = ref<Post[]>([] as Post[])
 const index = ref(0)
 const isEnd = ref(false)
 const fetchingPosts = ref(false)
 
+const posts = ref<Post[]>([] as Post[])
 const readPosts = async (page: number) => {
   const res = await client.request<Post[]>(
     readItems(dirStaticConfig.blogCollection, {

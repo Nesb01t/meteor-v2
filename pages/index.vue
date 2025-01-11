@@ -1,6 +1,26 @@
 <script setup lang="ts">
+import { readItems } from '@directus/sdk'
+import type { Post } from '~/types/from-directus'
+
 definePageMeta({
   layout: 'base',
+})
+
+const PAGE_LIMIT = 8
+const posts = ref<Post[]>([] as Post[])
+const readPosts = async (page: number) => {
+  const res = await client.request<Post[]>(
+    readItems(dirStaticConfig.blogCollection, {
+      sort: '-date_updated',
+      limit: PAGE_LIMIT,
+      page,
+    }),
+  )
+  return res
+}
+
+onMounted(async () => {
+  posts.value = await readPosts(1)
 })
 </script>
 
@@ -60,6 +80,21 @@ definePageMeta({
             <Icon name="fluent-emoji-high-contrast:artist-palette" /> link to
             portfolio
           </NuxtLink>
+        </li>
+
+        <li
+          class="mt-8 text-base bg-gradient-to-r from-purple-500 to-black dark:from-purple-50 dark:to-neutral-600 text-transparent bg-clip-text"
+        >
+          Blogs from the past few days.
+        </li>
+
+        <li class="mt-2 flex flex-wrap w-full overflow-hidden">
+          <PostListThumbnailCard
+            class="w-[240px] mr-2 mb-2"
+            v-for="(p, idx) in posts"
+            :key="idx"
+            :post="p"
+          />
         </li>
 
         <li

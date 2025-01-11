@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@directus/sdk": "^16.1.1",
+    "@nuxt/eslint": "^0.7.5",
     "@nuxt/icon": "^1.4.5",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.2",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
     "prettier": "^3.3.3",
+    "prettier-eslint": "^16.3.0",
     "sass": "^1.77.8"
   },
   "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
