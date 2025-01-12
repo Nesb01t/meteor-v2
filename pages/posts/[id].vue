@@ -21,13 +21,38 @@ onMounted(async () => {
   post.value = await readPost(id as string)
   mdContent.value = new MarkdownIt().render(post.value.content)
 })
+
+const toIndexPage = () => {
+  useRouter().back()
+}
+
+const toEditPage = () => {
+  //https://api.nescraft.cn/admin/content/blog_nesb01t/107
+  window.open(`https://api.nescraft.cn/admin/content/blog_nesb01t/${id}`)
+}
 </script>
 
 <template>
   <div v-if="post" class="single-post-page">
     <header>
-      <h1>{{ post.title }}</h1>
-      <h2>{{ post.sub_title }}</h2>
+      <h1>
+        {{ post.title }}
+      </h1>
+      <h2 class="flex items-center gap-2">
+        <div class="text-lg opacity-75 gap-2 flex items-center">
+          <Icon
+            @click="toIndexPage"
+            class="cursor-pointer hover:text-purple-500 transition-all"
+            name="typcn:arrow-back-outline"
+          />
+          <Icon
+            @click="toEditPage"
+            class="cursor-pointer hover:text-purple-500 transition-all"
+            name="fluent:edit-12-regular"
+          />
+        </div>
+        {{ post.sub_title }}
+      </h2>
       <p class="date">
         创建于 {{ formatDate(post.date_created) }}
 
