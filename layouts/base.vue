@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import BgRainbow from '~/components/com/bg-rainbow.vue'
 
 const width = ref(window.innerWidth)
 
@@ -20,8 +21,8 @@ const currentWidth = computed(() => width.value)
 
 <template>
   <div
-    class="absolute w-full h-full bg-black/100 z-[1000]"
     v-if="currentWidth < 600"
+    class="absolute w-full h-full bg-black/100 z-[1000]"
   >
     <div class="flex h-[100vh] flex-col justify-center items-center gap-1">
       <div class="items-center flex gap-2">
@@ -45,12 +46,12 @@ const currentWidth = computed(() => width.value)
     <ComFooter />
 
     <div
-      class="absolute grayscale-[99%] overflow-hidden w-full h-full z-[-1] opacity-75 contrast-[165%] dark:invert-0 invert"
+      class="fixed overflow-hidden w-full h-full z-[-1] opacity-45 dark:opacity-30 dark:brightness-75 contrast-[90%] blur-sm"
     >
-      <ComCoolBg class="scale-[150%] translate-x-[25%]"></ComCoolBg>
+      <BgRainbow />
       <div
-        class="fixed inset-0 w-[100vw] h-[100vh] bg-gradient-to-b from-black to-transparent z-2"
-      ></div>
+        class="fixed inset-0 w-[100vw] h-[100vh] bg-gradient-to-b from-white dark:from-black dark:via-black/85 to-transparent via-white/90 z-2"
+      />
     </div>
   </div>
 </template>

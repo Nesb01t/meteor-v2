@@ -27,7 +27,6 @@ const toIndexPage = () => {
 }
 
 const toEditPage = () => {
-  //https://api.nescraft.cn/admin/content/blog_nesb01t/107
   window.open(`https://api.nescraft.cn/admin/content/blog_nesb01t/${id}`)
 }
 </script>

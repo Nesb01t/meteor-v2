@@ -28,7 +28,7 @@ onMounted(async () => {
   <div class="index">
     <section class="relative w-full flex flex-col">
       <div
-        class="absolute right-[27%] max-sm:right-[20px] transition-all top-[60px] blur-[70px] rounded-full bg-gradient-to-br from-purple-700 to-yellow-300 min-w-[120px] w-[15%] aspect-video"
+        class="absolute right-[27%] max-sm:right-[20px] transition-all top-[60px] blur-[60px] rounded-full bg-gradient-to-br from-purple-700 to-yellow-300 min-w-[120px] w-[15%] aspect-video"
       ></div>
       <div class="flex">
         <h1
@@ -98,7 +98,7 @@ onMounted(async () => {
         </li>
 
         <li
-          class="mt-24 text-base bg-gradient-to-r from-purple-500 to-black dark:from-purple-50 dark:to-neutral-600 text-transparent bg-clip-text"
+          class="mt-20 text-base bg-gradient-to-r from-purple-500 to-black dark:from-purple-50 dark:to-neutral-600 text-transparent bg-clip-text"
         >
           Technologies used/experienced in projects. you can contact me if you
           interested in any of them.
@@ -133,7 +133,7 @@ onMounted(async () => {
           </NuxtLink>
         </li>
 
-        <li class="mt-4 flex w-full">
+        <li class="mt-4 mb-24 flex w-full">
           <TechGroup></TechGroup>
         </li>
       </ul>
