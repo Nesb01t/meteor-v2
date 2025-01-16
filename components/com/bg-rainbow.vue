@@ -1,12 +1,26 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
+const randomTransform = (i: number) => {
+  const scaleV = Math.random() * 0.5 + 0.3
+  const translateYOffset = scaleV
+  const transformValues = {
+    rotate: `rotate(${Math.random() * 10 + 5}deg)`,
+    scale: `scale(${scaleV})`,
+    translateY: `translateY(${translateYOffset}%)`,
+  }
+  return {
+    transform: Object.values(transformValues).join(' '),
+  }
+}
 const isDark = computed(() => colorMode.preference === 'dark')
 const bgColor = computed(() => (isDark.value ? 'black' : 'white'))
 </script>
 
 <template>
-  <div v-for="i in 25" :key="i" class="rainbow" />
+  <template v-for="i in 25" :key="i">
+    <div class="rainbow" :style="randomTransform(i)" />
+  </template>
 </template>
 
 <style lang="scss" scoped>
@@ -23,7 +37,6 @@ $length: 25;
   width: 0;
   top: 60vh;
   position: absolute;
-  transform: rotate(10deg);
   transform-origin: top right;
   @for $i from 1 through $length {
     &:nth-child(#{$i}) {

@@ -45,14 +45,14 @@ const currentWidth = computed(() => width.value)
     </main>
     <ComFooter />
 
-    <div
+    <!-- <div
       class="fixed overflow-hidden w-full h-full z-[-1] opacity-45 dark:opacity-30 dark:brightness-75 contrast-[90%] blur-sm"
     >
       <BgRainbow />
       <div
         class="fixed inset-0 w-[100vw] h-[100vh] bg-gradient-to-b from-white dark:from-black dark:via-black/85 to-transparent via-white/90 z-2"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
