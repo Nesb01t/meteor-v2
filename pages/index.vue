@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { readItems } from '@directus/sdk'
+import { aggregate, readItems } from '@directus/sdk'
 import type { Post } from '~/types/from-directus'
 
 definePageMeta({
@@ -7,6 +7,7 @@ definePageMeta({
 })
 
 const PAGE_LIMIT = 8
+const count = ref()
 const posts = ref<Post[]>([] as Post[])
 const readPosts = async (page: number) => {
   const res = await client.request<Post[]>(
@@ -16,6 +17,12 @@ const readPosts = async (page: number) => {
       page,
     }),
   )
+  const countRes = await client.request<{ count: number }[]>(
+    aggregate(dirStaticConfig.blogCollection, {
+      aggregate: { count: '*' },
+    }),
+  )
+  count.value = countRes[0].count
   return res
 }
 
@@ -85,7 +92,11 @@ onMounted(async () => {
         <li
           class="mt-8 text-base bg-gradient-to-r from-purple-500 to-black dark:from-purple-50 dark:to-neutral-600 text-transparent bg-clip-text"
         >
-          Blogs from the past few days.
+          Here are some recent blogs
+          <span v-if="count > 0"
+            >, you can view all {{ count }} articles on the posts page.
+          </span>
+          <span v-else>.</span>
         </li>
 
         <li class="mt-2 flex flex-wrap w-full overflow-hidden">

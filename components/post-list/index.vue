@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { readItems } from '@directus/sdk'
+import { aggregate, readCollection, readItems } from '@directus/sdk'
 import type { Post } from '~/types/from-directus'
 import Card from './card.vue'
 import Hero from '../com/hero.vue'
@@ -14,6 +14,7 @@ const index = ref(0)
 const isEnd = ref(false)
 const fetchingPosts = ref(false)
 
+const count = ref()
 const posts = ref<Post[]>([] as Post[])
 const readPosts = async (page: number) => {
   const res = await client.request<Post[]>(
@@ -23,6 +24,12 @@ const readPosts = async (page: number) => {
       page,
     }),
   )
+  const countRes = await client.request<{ count: number }[]>(
+    aggregate(dirStaticConfig.blogCollection, {
+      aggregate: { count: '*' },
+    }),
+  )
+  count.value = countRes[0].count
   if (res.length < PAGE_LIMIT) isEnd.value = true
   return res
 }
@@ -60,7 +67,7 @@ useIntersectionObserver(target, async ([entry], observerElement) => {
       :description="`Daily blogs, experimentation records, and some tool recommendations, intended solely for personal learning and sharing.<br> They will not be published on public forums or similar platforms.`"
     />
 
-    <!-- <div class="h-[20px]">
+    <div class="h-[20px]">
       <div
         v-if="fetchingPosts"
         class="opacity-80 text-sm flex gap-2 items-center"
@@ -68,10 +75,13 @@ useIntersectionObserver(target, async ([entry], observerElement) => {
         <Icon name="eos-icons:loading" /><span>Loading...</span>
       </div>
       <span v-else-if="posts?.[0]" class="opacity-80 text-xs">
+        <span v-if="count > 0"
+          >There are a total of {{ count }} articles,
+        </span>
         The last updated on
         {{ formatDate(posts[0]?.date_updated) }}</span
       >
-    </div> -->
+    </div>
 
     <TagFilter class="my-6" v-model="tagFilted" />
 

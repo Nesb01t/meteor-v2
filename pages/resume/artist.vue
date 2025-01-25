@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+onMounted(() => {
+  useColorMode().value = 'light'
+})
+</script>
 <template>
   <div class="resume">
     <h1 class="title">
@@ -41,7 +45,7 @@
           <span class="time">2021.09 至 2026.06</span>
         </li>
         <li>
-          结业课程: MIT6.006, CS61A, CS61B (迷宫生成 & 吉他仿声), UCB CS169, FCC
+          结业课程: MIT6.006, CS61A, CS61B (迷宫生成与吉他仿声), UCB CS169, FCC
           Frontend Camp, Games101, LearnOpenGL
         </li>
         <li>
@@ -154,8 +158,8 @@
           在 RPA 思想上设计, 基于 C# + WPF + WinAPI 的桌面端软件流程自动化工具
         </li>
         <li>
-          发布了多个衍生软件, 如: 魔兽世界拍卖信息分析, 最终幻想 XIV
-          游戏内去冗余, Apex Legends 非破坏性 Bot
+          发布了多个符合游戏规则的衍生软件, 如: 魔兽世界拍卖信息分析, 最终幻想
+          XIV 日常助手, Apex Legends 非侵入式 Bot
         </li>
       </ul>
 
@@ -178,30 +182,30 @@
       <ul class="skills">
         <li>
           <Icon name="mingcute:diamond-square-line" />
-          了解计算机图形学, 渲染管线, 了解 CG, GLSL, HLSL
+          了解计算机图形学, 渲染管线, 了解 cg, glsl, hlsl
         </li>
 
         <li>
           <Icon name="mingcute:diamond-square-line" />
-          了解美术制作流程和资源规范, 常用 Houdini, Blender 等 DCC 软件, 熟悉
-          comfyui SD 工作流
+          了解美术制作流程和资源规范, 常用 Houdini, Blender 等 DCC 软件
         </li>
 
         <li>
           <Icon name="mingcute:hexagon-line" />
-          了解 Figma, Aesprite, PS 等设计工具, 有一定的 ui/ux 和动画设计基础
+          了解 Figma, Aesprite, PS 等设计工具, 有一定的 ui/ux 和 mg 基础
         </li>
 
         <li>
           <Icon name="mingcute:hexagon-line" />
-          常用 Unity, Unreal, Cocos 等游戏引擎, 熟悉游戏开发流程及其设计理论,
+          常用 Unity, Unreal, Cocos 等游戏引擎, 熟悉游戏开发流程及设计理论,
           了解简单的性能分析和优化方案
         </li>
 
         <li>
           <Icon name="mingcute:hexagon-line" />
-          有丰富的游戏脚本 / Mod / interface 开发经验, 熟悉 Lua, Python, Java,
-          C# 等语言
+          有丰富的游戏脚本 / Mod / Addons 开发经验,
+          熟悉常见的面向对象和函数式编程语言,
+          能够独立完成一定体量全栈项目的开发部署和推广运维
         </li>
 
         <li>
@@ -226,11 +230,11 @@ span.iconify {
 }
 
 .resume {
-  @apply w-full max-w-[1000px] mx-auto;
+  @apply w-full max-w-[1000px] mx-auto pt-4;
 
   .title {
     @apply text-[25px] pb-1 pl-1 mb-2 flex items-end gap-2;
-    @apply border-b-[2px] font-[600] text-neutral-800;
+    @apply border-b-[2px] font-[600] text-neutral-800 dark:text-neutral-200;
 
     .name {
       @apply text-[16px] mb-[1px] opacity-85 font-normal;
@@ -241,7 +245,7 @@ span.iconify {
     @apply flex flex-wrap pl-5;
 
     a {
-      @apply w-1/3 p-1 text-sm flex text-neutral-800 items-center gap-1;
+      @apply w-1/3 p-1 text-sm flex text-neutral-800 dark:text-neutral-200 items-center gap-1;
       @apply hover:text-purple-500 cursor-pointer transition-all;
       list-style: none;
 
@@ -255,23 +259,23 @@ span.iconify {
     @apply my-6;
 
     label {
-      @apply border-b-[1px] text-neutral-600 border-gray-200 pb-1 pl-1 mb-2;
+      @apply border-b-[1px] text-neutral-600 dark:text-neutral-400 border-gray-200 pb-1 pl-1 mb-2;
       @apply text-lg font-[600];
       @apply flex items-center gap-1;
     }
 
     span.iconify {
-      @apply size-[22px] text-neutral-600;
+      @apply size-[22px] text-neutral-600 dark:text-neutral-400;
     }
 
     ul {
       @apply pl-6;
 
       li {
-        @apply text-[13px] text-neutral-800 w-full flex items-center gap-1 relative pl-4;
+        @apply text-[13px] text-neutral-800 dark:text-neutral-300 w-full flex items-center gap-1 relative pl-4;
 
         strong {
-          @apply font-[600] text-black mr-1;
+          @apply font-[600] text-black dark:text-white mr-1;
         }
 
         a {
@@ -280,7 +284,7 @@ span.iconify {
         }
 
         span.iconify {
-          @apply size-[14px] text-black absolute left-[-4px] top-[2px];
+          @apply size-[14px] text-black dark:text-white absolute left-[-4px] top-[2px];
         }
       }
 

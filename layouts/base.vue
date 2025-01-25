@@ -39,6 +39,7 @@ const currentWidth = computed(() => width.value)
   </div>
 
   <div v-else class="layout-base relative">
+    <ComMouseBloom />
     <ComHeader />
     <main>
       <slot />

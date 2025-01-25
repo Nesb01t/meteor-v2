@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+onMounted(() => {
+  useColorMode().value = 'light'
+})
+</script>
 <template>
   <div class="resume">
     <h1 class="title">
@@ -311,7 +315,7 @@ span.iconify {
 }
 
 .resume {
-  @apply w-full max-w-[1000px] mx-auto;
+  @apply w-full max-w-[1000px] mx-auto pt-4;
 
   .title {
     @apply text-[25px] pb-1 pl-1 mb-2 flex items-end gap-2;
