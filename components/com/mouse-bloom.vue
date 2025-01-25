@@ -11,7 +11,7 @@ const { x, y } = useMouse()
 const SIZE = 5
 
 const isLeft = usePageLeave()
-const enable = ref(false)
+const enable = ref(true)
 
 const enableBloom = useDebounceFn(() => {
   enable.value = true
