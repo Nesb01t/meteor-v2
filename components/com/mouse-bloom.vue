@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { useEventListener, useMouse, useDebounceFn } from '@vueuse/core'
+import {
+  useEventListener,
+  useMouse,
+  useDebounceFn,
+  usePageLeave,
+} from '@vueuse/core'
 
 const { x, y } = useMouse()
 
 const SIZE = 5
 
+const isLeft = usePageLeave()
 const enable = ref(false)
 
 const enableBloom = useDebounceFn(() => {
@@ -21,7 +27,7 @@ useEventListener('scroll', handleScroll)
 
 <template>
   <div
-    :class="enable ? 'opacity-70' : 'opacity-0'"
+    :class="enable && !isLeft ? 'opacity-70' : 'opacity-0'"
     class="bg-gradient-to-r transition-opacity duration-300 absolute rounded-full blur-[15px] dark:blur-[11px] from-purple-900 to-blue-900 dark:from-white dark:to-white"
     :style="{
       left: x - SIZE * 0.1 + 'px',
